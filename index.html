@@ -1,518 +1,517 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chalimatus Sa'Diyyah - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chalimatus Sa'Diyyah | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff8fb;
+color:#444;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+z-index:999;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:700;
+font-size:22px;
+color:#d65a92;
+}
+
+.logo-icon{
+width:40px;
+height:40px;
+border-radius:50%;
+background:#ffd6e8;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#d65a92;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8% 60px;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.hero-img img{
+width:320px;
+height:320px;
+object-fit:cover;
+border-radius:50%;
+border:8px solid #ffd6e8;
+box-shadow:0 10px 30px rgba(214,90,146,.2);
+transition:.4s;
+}
+
+.hero-img img:hover{
+transform:scale(1.05);
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h1{
+font-size:55px;
+color:#d65a92;
+}
+
+.hero-text h3{
+margin-top:10px;
+font-weight:500;
+color:#777;
+}
+
+.hero-text p{
+margin-top:20px;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 25px;
+background:#d65a92;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* SECTION */
+
+section{
+padding:90px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:38px;
+color:#d65a92;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#d65a92;
+}
+
+/* TIMELINE */
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.timeline-item{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.timeline-item h3{
+color:#d65a92;
+margin-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* CONTACT */
+
+.contact-box{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+max-width:700px;
+margin:auto;
+}
+
+.contact-box p{
+margin:10px 0;
+}
+
+/* FOOTER */
+
+footer{
+background:#ffd6e8;
+padding:20px;
+text-align:center;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero-text h1{
+font-size:40px;
+}
+
+.hero-img img{
+width:250px;
+height:250px;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+</style>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-chart-pie"></i>
-                </div>
-                <div class="logo-text">
-                    <h2>Ekonomi Informasi</h2>
-                    <p>Information Systems</p>
-                </div>
-            </div>
 
-            <!-- Hamburger Menu -->
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
+<nav>
 
-            <!-- Navigation Menu -->
-            <nav class="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <div class="nav-dropdown">
-                    <button class="nav-link dropdown-btn">
-                        Project <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#projects-team" class="dropdown-link">Project Team</a>
-                        <a href="#projects-individu" class="dropdown-link">Project Individu</a>
-                    </div>
-                </div>
-                <a href="#gallery" class="nav-link">Gallery Foto</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-        </div>
-    </header>
+<div class="logo">
+<div class="logo-icon">🎓</div>
+Ekonomi Informasi
+</div>
 
-    <!-- Home Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Halo! Saya <span class="gradient-text">Chalimatus Sa'Diyyah</span></h1>
-                <p class="hero-subtitle">Mahasiswa Information Systems | UI/UX Designer | Business Analyst</p>
-                <p class="hero-description">
-                    Seorang mahasiswa yang passionate dalam pengembangan teknologi informasi, aplikasi design, dan data visualization. 
-                    Berdisiplin, teliti, dan berkomitmen untuk pembelajaran berkelanjutan.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
-                    <a href="#projects" class="btn btn-secondary">Lihat Project</a>
-                </div>
-                <div class="hero-info">
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+62 878 8216 3337</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>chalimaats@gmail.com</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>West Bekasi, Indonesia</span>
-                    </div>
-                </div>
-            </div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-            <div class="hero-image">
-                <div class="profile-wrapper">
-                    <img src="https://via.placeholder.com/400x500/ffd4e5/ffffff?text=Chalimatus+Profile" alt="Chalimatus Sa'Diyyah" class="profile-img">
-                    <div class="profile-decoration"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+</nav>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-intro">
-                        Saya adalah mahasiswa semester 4 program Information Systems di Fakultas Teknik dan Ilmu Komputer, 
-                        Universitas Bakrie dengan GPA 3.51/4.00.
-                    </p>
-                    <div class="about-highlight">
-                        <h3>Keahlian Utama</h3>
-                        <div class="skills-list">
-                            <div class="skill-badge">UI/UX Design</div>
-                            <div class="skill-badge">Data Visualization</div>
-                            <div class="skill-badge">Database Design</div>
-                            <div class="skill-badge">System Analysis</div>
-                            <div class="skill-badge">Business Process</div>
-                        </div>
-                    </div>
+<section class="hero" id="home">
 
-                    <div class="about-highlight">
-                        <h3>Tools & Teknologi</h3>
-                        <div class="tools-list">
-                            <span class="tool-item">Figma</span>
-                            <span class="tool-item">Visual Studio Code</span>
-                            <span class="tool-item">Bizagi</span>
-                            <span class="tool-item">Draw.io</span>
-                            <span class="tool-item">Tableau</span>
-                            <span class="tool-item">XAMPP</span>
-                            <span class="tool-item">Microsoft Office</span>
-                        </div>
-                    </div>
-                </div>
+<div class="hero-img">
+<img src="assets/profile.jpg" alt="Chalimatus">
+</div>
 
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Semester</div>
-                        <div class="stat-desc">Information Systems</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3.51</div>
-                        <div class="stat-label">GPA</div>
-                        <div class="stat-desc">Academic Achievement</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Major Projects</div>
-                        <div class="stat-desc">Academic & Organization</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="hero-text">
 
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">Pendidikan</h2>
-            <div class="education-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2023 - Present</span>
-                        <h3>Undergraduate - Information Systems</h3>
-                        <p class="timeline-school">Universitas Bakrie, Fakultas Teknik & Ilmu Komputer</p>
-                        <ul class="timeline-list">
-                            <li>Semester: 4 (Current)</li>
-                            <li>GPA: 3.51/4.00</li>
-                            <li>Fokus: Programming, Database Management, Business Process, System Design, Data Visualization</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2020 - 2023</span>
-                        <h3>Senior High School - Social Sciences</h3>
-                        <p class="timeline-school">Ilmu Pengetahuan Sosial (IPS)</p>
-                        <ul class="timeline-list">
-                            <li>Akuntansi Dasar & Pencatatan Keuangan</li>
-                            <li>Konsep Ekonomi Fundamental</li>
-                            <li>Analisis Peta & Geografi</li>
-                            <li>Studi Sosial & Lingkungan</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<h1>Chalimatus Sa'Diyyah</h1>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Pengalaman</h2>
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="exp-header">
-                        <h3>Freelance Admin & Marketing Specialist</h3>
-                        <span class="exp-date">2024 - Present</span>
-                    </div>
-                    <p class="exp-company">Beauty Salon</p>
-                    <ul class="exp-list">
-                        <li>Dukungan administratif (entry data, manajemen dokumen, penjadwalan)</li>
-                        <li>Dukungan marketing (pembuatan konten, media sosial)</li>
-                        <li>Tools: Google Workspace, Canva, Instagram, TikTok</li>
-                        <li>Remote work, adaptabilitas, dan skill komunikasi yang baik</li>
-                    </ul>
-                </div>
+<h3>Information Systems Student • UI/UX Designer • Business Analyst</h3>
 
-                <div class="experience-card">
-                    <div class="exp-header">
-                        <h3>Treasurer - External LDK Program</h3>
-                        <span class="exp-date">March 2026</span>
-                    </div>
-                    <p class="exp-company">Universitas Bakrie</p>
-                    <ul class="exp-list">
-                        <li>Pengelolaan anggaran dan perencanaan biaya program organisasi</li>
-                        <li>Koordinasi kebutuhan keuangan antar divisi</li>
-                        <li>Persiapan laporan keuangan & dokumentasi akuntabilitas</li>
-                    </ul>
-                </div>
+<p>
+Mahasiswa aktif Program Studi Sistem Informasi Universitas Bakrie dengan minat pada UI/UX Design, Database Management, Business Process Analysis, Data Visualization, dan System Development. Aktif dalam organisasi kampus serta memiliki pengalaman dalam administrasi, marketing support, dan pengelolaan keuangan organisasi.
+</p>
 
-                <div class="experience-card">
-                    <div class="exp-header">
-                        <h3>Staff Senat Mahasiswa</h3>
-                        <span class="exp-date">Ongoing</span>
-                    </div>
-                    <p class="exp-company">Komisi II (Kebendaharaan) - Universitas Bakrie</p>
-                    <ul class="exp-list">
-                        <li>Review & evaluasi proposal anggaran organisasi mahasiswa</li>
-                        <li>Verifikasi akurasi & kelayakan pengeluaran yang diusulkan</li>
-                        <li>Pemeriksaan laporan akuntabilitas keuangan (LPJ)</li>
-                        <li>Validasi dokumen pendukung (kwitansi, bukti pembayaran)</li>
-                        <li>Memastikan transparansi & kepatuhan prosedur pelaporan keuangan</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<a href="#contact" class="btn">Contact Me</a>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Project Saya</h2>
-            
-            <!-- Project Tabs -->
-            <div class="project-tabs">
-                <button class="tab-btn active" data-tab="team">Project Team</button>
-                <button class="tab-btn" data-tab="individu">Project Individu</button>
-            </div>
+</div>
 
-            <!-- Project Team Tab -->
-            <div id="team" class="tab-content active">
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-sitemap"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Business Process Redesign</h3>
-                            <p class="project-course">Information Systems & Business Process Course (Bizagi)</p>
-                            <p class="project-description">
-                                Analisis proses bisnis dan redesign untuk meningkatkan efisiensi dengan pembuatan Business Process Model and Notation (BPMN).
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Bizagi</span>
-                                <span class="tag">BPMN</span>
-                                <span class="tag">Process Analysis</span>
-                            </div>
-                        </div>
-                    </div>
+</section>
 
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-hamburger"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Smart Burger Ordering System (Caburg)</h3>
-                            <p class="project-course">System Analysis & Design Course (Figma, Draw.io)</p>
-                            <p class="project-description">
-                                Pengembangan prototipe smart burger ordering system dengan desain UI/UX menggunakan Figma dan diagram UML serta database design dengan Draw.io.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Figma</span>
-                                <span class="tag">UI/UX Design</span>
-                                <span class="tag">UML</span>
-                                <span class="tag">Database Design</span>
-                            </div>
-                        </div>
-                    </div>
+<section id="about">
 
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Homina - Home Service Management Platform</h3>
-                            <p class="project-course">System Analysis & Design Course (Figma, Draw.io)</p>
-                            <p class="project-description">
-                                Pengembangan prototipe platform manajemen layanan rumah dengan desain UI/UX Figma, diagram UML, dan database design. Fitur: booking system, tracking, dan digital reporting.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Figma</span>
-                                <span class="tag">UI/UX Design</span>
-                                <span class="tag">Booking System</span>
-                                <span class="tag">Database Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="section-title">
+<h2>About Me</h2>
+</div>
 
-            <!-- Project Individu Tab -->
-            <div id="individu" class="tab-content">
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Data Visualization Dashboard</h3>
-                            <p class="project-course">Data Analysis & Visualization</p>
-                            <p class="project-description">
-                                Pembuatan dashboard visualisasi data interaktif untuk analisis dan reporting menggunakan tools modern.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Data Visualization</span>
-                                <span class="tag">Analytics</span>
-                                <span class="tag">Dashboard</span>
-                            </div>
-                        </div>
-                    </div>
+<div class="grid">
 
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Database Management System</h3>
-                            <p class="project-course">Database Systems Course</p>
-                            <p class="project-description">
-                                Desain dan implementasi sistem manajemen database yang efisien dengan normalisasi dan optimisasi query.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Database Design</span>
-                                <span class="tag">SQL</span>
-                                <span class="tag">Optimization</span>
-                            </div>
-                        </div>
-                    </div>
+<div class="card">
+<h3>Education</h3>
+<p>
+Universitas Bakrie<br>
+Sistem Informasi<br>
+GPA 3.51 / 4.00
+</p>
+</div>
 
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Web Application Development</h3>
-                            <p class="project-course">Programming & Web Development</p>
-                            <p class="project-description">
-                                Pengembangan aplikasi web dengan fokus pada user experience dan responsivitas design modern.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Web Development</span>
-                                <span class="tag">Frontend</span>
-                                <span class="tag">Responsive Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Certification</h3>
+<p>
+Business Intelligence Analyst (BNSP)
+</p>
+</div>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Gallery Foto</h2>
-            <p class="section-subtitle">Dokumentasi aktivitas akademik dan organisasi</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/ffc0db/ffffff?text=Project+Team+1" alt="Project Team">
-                    <div class="gallery-overlay">
-                        <p>Project Team Work</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/ffd4e5/ffffff?text=Organization" alt="Organization">
-                    <div class="gallery-overlay">
-                        <p>Senat Mahasiswa</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/ffb3d9/ffffff?text=Campus+Activity" alt="Campus">
-                    <div class="gallery-overlay">
-                        <p>Campus Activity</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/ffc0db/ffffff?text=Design+Work" alt="Design">
-                    <div class="gallery-overlay">
-                        <p>Design Work</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/ffd4e5/ffffff?text=Presentation" alt="Presentation">
-                    <div class="gallery-overlay">
-                        <p>Project Presentation</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x250/ffb3d9/ffffff?text=Workshop" alt="Workshop">
-                    <div class="gallery-overlay">
-                        <p>Workshop & Training</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Location</h3>
+<p>
+West Bekasi, Indonesia
+</p>
+</div>
 
-    <!-- Certification Section -->
-    <section id="certification" class="certification">
-        <div class="container">
-            <h2 class="section-title">Sertifikasi</h2>
-            <div class="certification-content">
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="cert-info">
-                        <h3>Business Intelligence Analyst</h3>
-                        <p class="cert-issuer">by BNSP (Badan Nasional Sertifikasi Profesi)</p>
-                        <p class="cert-desc">Profesional terlatih dalam analisis data bisnis dan business intelligence dengan standar nasional Indonesia.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Semester</h3>
+<p>
+Semester 6
+</p>
+</div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Hubungi Saya</h2>
-            <p class="section-subtitle">Mari berkolaborasi dan diskusi lebih lanjut</p>
+</div>
 
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Nomor Telepon</h4>
-                            <p><a href="tel:+6287882163337">+62 878 8216 3337</a></p>
-                        </div>
-                    </div>
+</section>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p><a href="mailto:chalimaats@gmail.com">chalimaats@gmail.com</a></p>
-                        </div>
-                    </div>
+<section>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Lokasi</h4>
-                            <p>West Bekasi, Jawa Barat, Indonesia</p>
-                        </div>
-                    </div>
+<div class="section-title">
+<h2>Skills</h2>
+</div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Institusi</h4>
-                            <p>Universitas Bakrie</p>
-                        </div>
-                    </div>
-                </div>
+<div class="grid">
 
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nama Anda" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Anda" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subjek">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Pesan Anda" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-                </form>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Hard Skills</h3>
+<p>
+UI/UX Design<br>
+Database Design<br>
+System Analysis<br>
+Data Visualization<br>
+UML Design
+</p>
+</div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-text">
-                <p>&copy; 2026 Chalimatus Sa'Diyyah. All rights reserved.</p>
-                <p>Information Systems Student | Universitas Bakrie</p>
-            </div>
-            <div class="footer-social">
-                <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer>
+<div class="card">
+<h3>Tools</h3>
+<p>
+Figma<br>
+Bizagi<br>
+Draw.io<br>
+XAMPP<br>
+VS Code<br>
+Tableau
+</p>
+</div>
 
-    <!-- Scripts -->
-    <script src="js/script.js"></script>
+<div class="card">
+<h3>Soft Skills</h3>
+<p>
+Problem Solving<br>
+Communication<br>
+Teamwork<br>
+Time Management
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>Experience</h2>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Freelance Admin & Marketing Specialist</h3>
+<p>
+Administrative support, content creation, scheduling, social media management, and marketing support.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Treasurer – External LDK Program</h3>
+<p>
+Managed budgeting, financial planning, accountability reports, and coordinated financial needs across divisions.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+<h2>Organization</h2>
+</div>
+
+<div class="timeline-item">
+
+<h3>Senat Mahasiswa Universitas Bakrie</h3>
+
+<p>
+Staff Komisi II (Treasury), responsible for proposal review, budget verification, LPJ evaluation, and financial accountability monitoring.
+</p>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="section-title">
+<h2>Projects</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Business Process Redesign</h3>
+<p>
+Business process analysis and BPMN redesign using Bizagi.
+</p>
+</div>
+
+<div class="card">
+<h3>Homina</h3>
+<p>
+Home Service Management Platform with booking and tracking features.
+</p>
+</div>
+
+<div class="card">
+<h3>Caburg</h3>
+<p>
+Smart Burger Ordering System prototype designed using Figma and UML.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="section-title">
+<h2>Gallery</h2>
+</div>
+
+<div class="gallery">
+
+<img src="assets/profile.jpg">
+<img src="assets/profile.jpg">
+<img src="assets/profile.jpg">
+<img src="assets/profile.jpg">
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="section-title">
+<h2>Contact</h2>
+</div>
+
+<div class="contact-box">
+
+<p>📧 chalimaats@gmail.com</p>
+
+<p>📱 +62 87882163337</p>
+
+<p>📍 West Bekasi, Indonesia</p>
+
+<p>
+LinkedIn • GitHub • Instagram
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Chalimatus Sa'Diyyah Portfolio
+</footer>
+
 </body>
 </html>
